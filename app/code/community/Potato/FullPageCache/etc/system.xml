@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <po_fpc translate="label" module="po_fpc">
+            <label>Full Page Cache</label>
+            <tab>po_core</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <sort_order>10</sort_order>
+                    <fields>
+                        <max_allowed_size translate="label">
+                            <label>Max. Cache Size (Mb)</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                        </max_allowed_size>
+                        <mobile_detect translate="label">
+                            <label>Use Mobile Detect</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <tooltip>Enable this option if your website uses separate theme for phone/tablet devices. Keep this option disabled if your website uses single responsive theme.</tooltip>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </mobile_detect>
+                        <mobile_separate translate="label">
+                            <label>Separate Phone/Tablet Devices Cache</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <tooltip>if "Yes" cache will be separate for phone and tablet devices</tooltip>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends><mobile_detect>1</mobile_detect></depends>
+                        </mobile_separate>
+                        <auto_clean>
+                            <label>Flush Cache Automatically When</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>po_fpc/source_autoClean</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <can_be_empty>1</can_be_empty>
+                        </auto_clean>
+                        <cronjob translate="label">
+                            <label>Cronjob for clear cache by catalog rule</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>45</sort_order>
+                        </cronjob>
+                        <readme translate="label">
+                            <label>Installation Guide &amp; FAQ</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>link</frontend_type>
+                            <frontend_model>po_fpc/adminhtml_system_config_form_field_link</frontend_model>
+                            <href>https://potatocommerce.com/full-page-cache.html#readme</href>
+                            <target>_blank</target>
+                            <sort_order>50</sort_order>
+                        </readme>
+                        <exclude_guide translate="label">
+                            <label>Exclude blocks from caching</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>link</frontend_type>
+                            <frontend_model>po_fpc/adminhtml_system_config_form_field_link</frontend_model>
+                            <href>https://potatocommerce.com/fpc-exclude</href>
+                            <target>_blank</target>
+                            <sort_order>60</sort_order>
+                        </exclude_guide>
+                    </fields>
+                </general>
+                <debug translate="label">
+                    <label>Debug</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <sort_order>30</sort_order>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enable Page Cache Debug</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                        </enabled>
+                        <ip_addresses translate="label">
+                            <label>Ip Address(es) (comma separated)</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                        </ip_addresses>
+                        <block_name_hint translate="label">
+                            <label>Block Name Hints</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                        </block_name_hint>
+                    </fields>
+                </debug>
+            </groups>
+        </po_fpc>
+    </sections>
+</config>

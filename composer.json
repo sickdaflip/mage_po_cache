@@ -1,0 +1,20 @@
+{
+  "name": "sickdaflip/fullpagecache",
+  "type": "magento-module",
+  "license": "MIT",
+  "description": "Magento 1.9.3. FPC",
+  "authors": [
+    {
+      "name": "SickDaFlip",
+      "email": "philippbreitsprecher@gmail.com"
+    }
+  ],
+  "require": {
+    "magento-hackathon/magento-composer-installer": "*"
+  },
+  "support": {
+    "issues": "https://github.com/sickdaflip/fullpagecache/issues",
+    "wiki": "https://github.com/sickdaflip/fullpagecache/wiki",
+    "source": "https://github.com/sickdaflip/fullpagecache"
+  }
+}

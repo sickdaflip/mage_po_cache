@@ -1,0 +1,24 @@
+#po_crawler_priority table td {
+    padding: 5px;
+    vertical-align: middle;
+    cursor: move;
+}
+#po_crawler_priority table span {
+    text-transform: uppercase;
+}
+
+#po_crawler_priority table {
+    width: 280px;
+}
+.pie-container{
+    display:block;
+}
+.pie{
+    float:left;
+    width:200px;
+    text-align: center;
+}
+.pie .title{
+    text-align: center;
+    font-size: 22px;
+}

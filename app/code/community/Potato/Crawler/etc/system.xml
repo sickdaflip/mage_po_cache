@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <po_crawler translate="label" module="po_crawler">
+            <label>Crawler</label>
+            <tab>po_core</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <stat translate="label">
+                    <label>Stat</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <sort_order>1</sort_order>
+                    <frontend_model>po_crawler/adminhtml_system_config_stat</frontend_model>
+                </stat>
+                 <general translate="label">
+                    <label>General</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>10</sort_order>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enabled</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                        </enabled>
+                        <acceptable_cpu_load translate="label">
+                            <label>Acceptable CPU Load, %</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <tooltip>To prevent high CPU load, the crawling process will be paused if CPU load is greater than this value.</tooltip>
+                        </acceptable_cpu_load>
+                        <cronjob translate="label">
+                            <label>Cronjob for full warmup</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                        </cronjob>
+                    </fields>
+                </general>
+                <priority>
+                    <label>Crawler Priorities</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>20</sort_order>
+                    <fields>
+                        <head translate="label">
+                            <label>Here you can enable/disable crawling for the entities. Use drag'n'drop to change the priorities - the higher an option, the higher its priority.</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>10</sort_order>
+                        </head>
+                        <store_priority>
+                            <label>Store Priority</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                        </store_priority>
+                        <page_group_priority>
+                            <label>Run Crawler For Page Type(s)</label>
+                            <frontend_model>po_crawler/adminhtml_system_config_form_field_priority</frontend_model>
+                            <options>Potato_Crawler_Model_Source_PageGroup</options>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>30</sort_order>
+                        </page_group_priority>
+                        <currency_priority>
+                            <label>Run Crawler For Currency(-ies)</label>
+                            <frontend_model>po_crawler/adminhtml_system_config_form_field_priority</frontend_model>
+                            <options>Potato_Crawler_Model_Source_Currency</options>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>40</sort_order>
+                        </currency_priority>
+                        <customer_group>
+                            <label>Run Crawler For Customer Group(s)</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <frontend_model>po_crawler/adminhtml_system_config_form_field_priority</frontend_model>
+                            <options>Potato_Crawler_Model_Source_CustomerGroup</options>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <can_be_empty>1</can_be_empty>
+                        </customer_group>
+                        <protocol>
+                            <label>Run Crawler For Protocol(s)</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <frontend_model>po_crawler/adminhtml_system_config_form_field_priority</frontend_model>
+                            <options>Potato_Crawler_Model_Source_Protocol</options>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </protocol>
+                    </fields>
+                </priority>
+                <advanced>
+                    <label>Advanced</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>30</sort_order>
+                    <fields>
+                        <useragent translate="label">
+                            <label>User Agents Used for Crawling Pages</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_model>po_crawler/adminhtml_system_config_form_field_useragent</frontend_model>
+                            <backend_model>po_crawler/source_backend_serialized</backend_model>
+                            <sort_order>40</sort_order>
+                            <comment><a href="http://www.useragentstring.com/pages/useragentstring.php">List of User Agent</a></comment>
+                        </useragent>
+                        <source>
+                            <label>Source of Page URLs</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>po_crawler/source_urlSource</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </source>
+                        <source_path>
+                            <label>Sitemap (Url|Path)</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><source>2</source></depends>
+                            <frontend_type>text</frontend_type>
+                            <comment>web url to file or absolute path</comment>
+                            <sort_order>60</sort_order>
+                        </source_path>
+                        <short_product_url translate="label">
+                            <label>Use Only Short Product URLs</label>
+                            <depends><source>1</source></depends>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>70</sort_order>
+                            <tooltip>"No" means that both short and long product URLs will be used by the crawler.</tooltip>
+                        </short_product_url>
+                        <debug translate="label">
+                            <label>Enable Crawler Logging</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <tooltip>if "Yes" will be created file "var/log/po_crawler.log" with more detailed information about process.</tooltip>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </debug>
+                        <!--use_popularity>
+                            <label>Enable Popularity Stats</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>85</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </use_popularity-->
+                        <queue translate="label">
+                            <label>Add To Queue</label>
+                            <frontend_model>po_crawler/adminhtml_system_config_source_button</frontend_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>90</sort_order>
+                        </queue>
+                    </fields>
+                </advanced>
+            </groups>
+        </po_crawler>
+    </sections>
+</config>

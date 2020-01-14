@@ -1,0 +1,54 @@
+<div class="grid">
+    <table cellspacing="0" >
+        <col width="200" />
+        <thead>
+        <tr class="headings">
+            <th><?php echo $this->__('Value'); ?></th>
+            <th><?php echo $this->__('Enabled'); ?></th>
+        </tr>
+        </thead>
+        <tbody id="<?php echo $this->getId()?>">
+        <?php foreach ($this->getOptions() as $option):?>
+            <?php $isDisabled = $this->isDisabled($option['value']);?>
+            <tr>
+                <td class="priority_handle">
+                    <span><?php echo $option['label']?></span>
+                    <input type="hidden" name="<?php echo $this->getName()?>" value="<?php echo $option['value']; ?>" <?php if ($isDisabled):?> disabled="disabled"<?php endif;?> />
+                </td>
+                <td>
+                    <div>
+                        <input class="enabled-checkbox" name="priority_disabled[]" type="checkbox" value="<?php echo $option['value']; ?>" <?php if (!$isDisabled):?> checked<?php endif;?>/>
+                    </div>
+                </td>
+            </tr>
+        <?php endforeach;?>
+        </tbody>
+    </table>
+</div>
+
+<script type="text/javascript">
+    (function() {
+        var container = $("<?php echo $this->getId()?>");
+        if (!container) {
+            return;
+        }
+        Sortable.create(container, {
+                tag:"tr",
+                dropOnEmpty:false,
+                overlap:'vertical',
+                constraint:'vertical',
+                containment: [container],
+                handle: '#<?php echo $this->getId()?> .priority_handle',
+            }
+        );
+        $$(".enabled-checkbox").each(function(element) {
+            element.observe('click', function(){
+                if (this.checked) {
+                    this.up('tr').select('input')[0].removeAttribute('disabled');
+                } else {
+                    this.up('tr').select('input')[0].setAttribute('disabled', 'disabled');
+                }
+            });
+        });
+    })()
+</script>

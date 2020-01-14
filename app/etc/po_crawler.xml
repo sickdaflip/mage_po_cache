@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <global>
+        <cache>
+            <request_processors>
+                <po_crawler>Potato_Crawler_Model_Cache_Processor</po_crawler>
+            </request_processors>
+        </cache>
+    </global>
+</config>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_system_config_edit>
+        <reference name="head">
+            <action method="setCanLoadExtJs"><flag>1</flag></action>
+            <action method="setCanLoadRulesJs"><flag>1</flag></action>
+            <action method="addCss"><name>po_crawler/css/style.css</name></action>
+        </reference>
+    </adminhtml_system_config_edit>
+    <adminhtml_index_edit>
+        <reference name="head">
+            <action method="setCanLoadExtJs"><flag>1</flag></action>
+            <action method="setCanLoadRulesJs"><flag>1</flag></action>
+            <action method="addCss"><name>po_crawler/css/style.css</name></action>
+        </reference>
+    </adminhtml_index_edit>
+</layout>
