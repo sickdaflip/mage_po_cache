@@ -1,8 +1,8 @@
 {
-  "name": "sickdaflip/fullpagecache",
+  "name": "sickdaflip/mage_po_cache",
   "type": "magento-module",
   "license": "MIT",
-  "description": "Magento 1.9.3. FPC",
+  "description": "Magento 1.9.4. FPC",
   "authors": [
     {
       "name": "SickDaFlip",
